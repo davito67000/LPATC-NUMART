@@ -1,0 +1,885 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('font/sourcesanspro-bold-webfont.woff2') format('woff2'),
+         url('font/sourcesanspro-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('font/sourcesanspro-light-webfont.woff2') format('woff2'),
+         url('font/sourcesanspro-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('font/sourcesanspro-regular-webfont.woff2') format('woff2'),
+         url('font/sourcesanspro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('font/sourcesanspro-semibold-webfont.woff2') format('woff2'),
+         url('font/sourcesanspro-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: #1a2052;
+}
+.fonts-loaded * {
+    font-family: "SourceSanspro", sans-serif;
+}
+.container {
+    width: 1300px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 0 0 8px #1a2052;
+    text-transform: uppercase;
+}
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.white-title {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+h5 {
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+h6 {
+    font-size: 24px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+a:active, a:hover {
+    color: #e78300;
+}
+a {
+    color: #1a2052;
+}
+a:focus, a:visited{
+    color: #1a2052;
+}
+.discover-label {
+    display: block;
+    width: 500px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.discover-label:hover {
+    color: #e78300;
+}
+.polygon {
+    width: 30px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+
+header {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    background:top 0 right 49px no-repeat url('img/bg_header.svg');
+}
+header .logo {
+    margin: 10px auto auto 127px;
+}
+header .menu {
+    position: absolute;
+    bottom: 0;
+    right: 111px;
+}
+header .menu ul{
+    width: 694px;
+    display: flex;
+    justify-content: space-between;
+}
+header .menu ul li {
+    width: 122px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+header .menu ul li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-bottom: solid 2px #1a2052;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+header .menu ul li a:hover {
+    border-bottom: solid 2px #e78300;
+    color: #e78300;
+}
+header .menu ul li a:active,
+header .menu ul li a:focus {
+    color: #1a2052;
+}
+header .social-networks {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+header .social-networks ul li {
+    width: 26px;
+    height: 29px;
+    position: relative;
+    background-color: #1a2052;
+    margin-bottom: 10px;
+}
+header .social-networks ul li a {
+    display: block;
+    content: "";
+    position: absolute;
+    background: #fff;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+}
+header .social-networks ul li a:hover,
+header .social-networks ul .active a {
+    background: #e78300;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+header .social-networks ul li,
+header .social-networks ul li a {
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+header .social-networks img {
+    width: 15px;
+    height: 15px;
+}
+header .social-networks .play-img img {
+    width: 24px;
+    height: 24px;
+}
+header .social-networks ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.art-innovation {
+    width: 100%;
+    height: 600px;
+    background-image: url('img/flux-de-stefane-perraud-en-gare-de-est-paris-prod-digitalarti-1@3x.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+.art-innovation h2 {
+    text-align: center;
+    padding-top: 350px;
+}
+.art-innovation p {
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 8px #1a2052;
+}
+
+.numart-text {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: no-repeat left url('img/bg_numart_news.svg');
+}
+.numart-text p {
+    font-size: 18px;
+}
+.numart-text p a:active,
+.numart-text p a:focus {
+    color: #1a2052;
+}
+.numart-text p a:hover {
+    color: #e78300;
+}
+
+.services {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f5f5f5;
+}
+.services .container {
+    display: flex;
+    justify-content: space-between;
+}
+.services article {
+    width: 265px;
+    margin-bottom: 50px;
+}
+.services article img {
+    width: 150px;
+    display: block;
+    margin: auto auto 35px;
+}
+.services article p {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #212121;
+}
+
+.vision-expertise {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    background-image: url('img/aeroport-paris-cdg-oeuvre-sur-natures-de-miguel-chevalier@3x.jpg');
+    background-size: cover; 
+    background-position: bottom;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+.vision-expertise:before {
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1a2052;
+    opacity: 0.85;
+}
+.vision-expertise * {
+    z-index: 10;
+}
+.vision-expertise .container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.vision-expertise .iconographie-1 {
+    width: 172px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+.vision-expertise .icon {
+    width: 172px;
+    height: 149px;
+    margin: auto;
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vision-expertise .icon .icon-img {
+    width: 70px;
+    height: 70px;
+}
+.vision-expertise article .icon .hexagon {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.vision-expertise article {
+    width: 360px;
+}
+.vision-expertise article p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f5f5f5; 
+}
+.vision-expertise h3, .vision-expertise p,
+.vision-expertise .polygon, .vision-expertise .discover-label {
+    position: relative;
+}
+.vision-expertise .chapeau {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 63px;
+}
+.vision-expertise .discover-label {
+    color: #fff;
+}
+.vision-expertise .discover-label:hover {
+    color: #e78300;
+}
+.vision-expertise .polygon path {
+    stroke: #fff;
+}
+
+.actus {
+    background-color: #f5f5f5;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+.actus article {
+    width: 550px;
+    background-color: #fff;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.actus article:nth-child(2n+1) {
+    margin-left: 90px;
+}
+.actus article:after {
+    content:"";
+    display: block;
+    clear: both;
+}
+.actus p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.actus p ~ p {
+    font-size: 13px;
+    line-height: 1.54;
+    color: #4a4a4a;
+    margin-top: 10px;
+}
+.actus .container p span {
+    color: #1a2052;
+}
+.actus article img {
+    width: 30%;
+    float:left;
+}
+.actus article .text-actus {
+    width: 70%;
+    float: left;
+    padding: 10px 10px 0 10px; 
+    box-sizing: border-box;
+}
+.actus .container {
+    margin-bottom: 50px;
+}
+.actus .container:after {
+    display:block;
+    content:"";
+    clear: both;
+}
+
+.productions-artistiques {
+    background-color: #1a2052;
+    background-image: url('img/bg-productions-artistiques.svg');
+    background-repeat: no-repeat;
+    background-position:  bottom right; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+.productions-artistiques .container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.productions-artistiques figure {
+    position: relative;
+    width: 550px;
+    border: 5px solid #fff;
+    box-sizing: border-box;
+}
+.productions-artistiques figure img {
+    width: 540px;
+    display: block;
+    bottom: 0;
+}
+.productions-artistiques figure figcaption {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    z-index: 10;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: right;
+    color: #fff;
+    background-color: rgba(26, 32, 82, 0.85);
+    -webkit-clip-path: polygon(0% 10px, 100% 100%, 100% 0%, 0% 0%);
+    clip-path: polygon(0% 10px, 100% 100%, 100% 0%, 0% 0%);   
+}
+.productions-artistiques article {
+    width: 550px;
+    display: inline-block;
+    margin-right: 20px;
+}
+.productions-artistiques article:first-child {
+    margin-left: 90px;
+}
+.productions-artistiques article h4 {
+    font-weight: normal;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 13px;
+}
+.productions-artistiques article p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+}
+.productions-artistiques .discover-label {
+    color: #fff;
+}
+.productions-artistiques .discover-label:hover {
+    color: #e78300;
+}
+.productions-artistiques .polygon path {
+    stroke: #fff;
+}
+
+.artlab {
+    background-image: url('img/bg-artlab.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+.artlab .container {
+    margin-bottom: 40px;
+}
+.artlab .bg-artlab{
+    width: 100%;
+    height: 620px;
+    background-image: url("img/bg-artlab@3x.jpg");
+    background-size: cover;
+    background-position: center;
+    -webkit-clip-path: polygon(0% 0%, 100% 7%, 100% 100%, 0% 93%);
+    clip-path: polygon(0% 0%, 100% 7%, 100% 100%, 0% 93%);
+}
+.artlab h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.artlab article {
+    width: 360px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 210px;
+}
+.artlab article:first-child{
+    margin-left: 185px;
+}
+.artlab p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #212121;
+    color: #fff;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+footer .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer h4 {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 1.3px;
+    text-align: left;
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+footer article {
+    font-size: 12.8px;
+    line-height: 1.64;
+}
+footer .contact-us {
+    width: 360px;
+    margin-left: 20px;
+}
+
+footer .polygon-footer {
+    width: 150px;
+    margin-left: 125px;
+}
+
+footer .social-networks ul {
+    width: 55px;
+    padding: 15px 20px 15px 0;
+    border-right: 2px solid #fff;
+    box-sizing: border-box;
+}
+footer .social-networks ul li svg path{
+    fill: #fff;
+}
+footer .social-networks ul li svg {
+    width: 30px;
+    height: 30px;
+}
+footer .social-networks ul li{
+    margin-top: 15px;
+}
+footer .social-networks ul li:first-child{
+    margin-top: 0;
+}
+footer .contact-us .city,
+footer .contact-us .infos {
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-top: 2px solid #fff;
+}
+footer .contact-us .infos {
+    border-bottom: 2px solid #fff;
+}
+footer .contact-us .team {
+    margin-top: 8px;
+}
+footer .letter {
+    width: 265px;
+    margin-left: 115px; 
+}
+footer .letter:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+footer .letter p {
+    height: 50px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    border-top: 2px solid #fff;
+    box-sizing: border-box;
+}
+footer .letter input[type="email"] {
+    width: 190px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid #fff;
+    padding: 6.5px 0 6.5px 10px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 14px;
+}
+footer .letter input[type="submit"] {
+    cursor: pointer;
+    width: 75px;
+    height: 30px;
+    padding: 6.5px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #212121;
+    border: 0;  
+}
+footer .letter input {
+    float: left;
+}
+.Numart {
+  height: 18px;
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+footer .links ul {
+    width: 250px;   
+    margin: auto;
+    display: flex;
+    justify-content:space-between;
+}
+footer .links {
+    margin-top: 20px;
+}
+footer .links li:after {
+    content:"•";
+    display: inline;
+    margin-left: 20px;
+}
+footer .links li:last-child:after {
+    content: none;
+}
+footer .links a{
+    font-size: 11px;
+    line-height: 1.45;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+footer .links a:hover {
+    color: #e78300;
+}
+
+@media( max-width: 1300px) {
+    .container {
+        width: 100%;
+    }
+
+    header .logo {
+        width: 125px;
+        height: auto;
+        margin-top: 50px;
+        margin-left: 25px;
+    }
+
+    .services .container {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .services article {
+        width: 20%;
+    }
+
+    .vision-expertise .container {
+        justify-content: space-around;
+    }
+    .vision-expertise .container article {
+        width: 30%;;
+    }
+
+    .actus .container article {
+        float: none;
+        margin: 0 auto 20px auto;
+    }
+
+    .productions-artistiques .container {
+        display: flex;
+        justify-content: space-around;
+    }
+    .productions-artistiques .container article {
+        display: block;
+        width: 45%;
+        margin: 0;
+    }
+    .productions-artistiques .container figure,
+    .productions-artistiques .container figcaption,
+    .productions-artistiques .container img {
+        width: 100%;
+    }
+
+    .artlab .container {
+        display: flex;
+        justify-content: space-around;
+    }
+    .artlab .container article {
+        width: 45%;
+        display: block;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    footer .social-networks {
+        margin-left: 60px;
+    }
+    footer .container figure {
+        display: none;
+    }
+}
+
+@media(max-width:900px) {
+    footer .container  {
+        display: block;
+        margin: auto;
+    }
+    footer .social-networks{
+        width: 360px;
+        height: auto;
+        margin: auto;
+    }
+    footer .social-networks ul{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        margin:10px; 
+        border: 0;
+    }
+    footer .social-networks ul li {
+        margin-top: 0;
+    }
+
+    footer .letter,
+    footer .contact-us{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+    footer .letter {
+        width: 360px;
+        
+    }
+}
+@media(max-width: 768px) {
+    .art-innovation{
+        background-image: url('img/flux-de-stefane-perraud-en-gare-de-est-paris-prod-digitalarti-1@2x.jpg');
+    }
+    .vision-expertise {
+        background-image: url('img/aeroport-paris-cdg-oeuvre-sur-natures-de-miguel-chevalier@2x.jpg');
+        background-position: center;
+    }
+    .artlab .bg-artlab{
+        background-image: url('img/bg-artlab@2x.jpg'); 
+    }
+    header .menu {
+        display: none;
+    }
+    .services article {
+        flex-wrap: wrap;
+        width:44%;
+    }
+    .vision-expertise .container,
+    .productions-artistiques .container,
+    .artlab .container {
+        flex-wrap: wrap;
+    }
+    .vision-expertise .container article,
+    .productions-artistiques .container article,
+    .artlab .container article {
+        width: 90%;
+        margin-bottom: 40px;
+    }
+}
+
+@media(max-width: 600px) {
+    .actus article {
+        width: 90%;
+    }
+    .actus article img {
+        display: none;
+    }
+    .actus article .text-actus{
+        width: 100%;
+    }
+    .numart-text p{
+        text-align: center;
+    }
+    .services article {
+        width: 90%;
+    }
+    .discover-label{
+        width: 95%;
+    }
+}
+@media(max-width: 480px) {
+    .art-innovation{
+        background-image: url('img/flux-de-stefane-perraud-en-gare-de-est-paris-prod-digitalarti-1.jpg');
+    }
+    .vision-expertise{
+        background-image: url('img/aeroport-paris-cdg-oeuvre-sur-natures-de-miguel-chevalier.jpg');
+        background-position: center;
+    }
+    .artlab .bg-artlab {
+        background-image: url('img/img/bg-artlab.jpg');
+    }
+    footer .social-networks,
+    footer .contact-us,
+    footer .letter,
+    footer .links {
+        width: 90%;
+    }
+    footer .contact-us .city, 
+    footer .contact-us .infos {
+        padding-left: 10px;
+        padding-right:10px;
+    }
+}
